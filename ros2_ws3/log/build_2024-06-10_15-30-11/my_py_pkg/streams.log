@@ -1,0 +1,18 @@
+[1.011s] Invoking command in '/home/changye/ros2_ws3/build/my_py_pkg': PYTHONPATH=/home/changye/ros2_ws3/build/my_py_pkg/prefix_override:/home/changye/ros2_ws3/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws3/build/my_py_pkg/build --no-deps symlink_data
+[1.443s] running develop
+[1.709s] running egg_info
+[1.709s] writing my_py_pkg.egg-info/PKG-INFO
+[1.709s] writing dependency_links to my_py_pkg.egg-info/dependency_links.txt
+[1.709s] writing entry points to my_py_pkg.egg-info/entry_points.txt
+[1.709s] writing requirements to my_py_pkg.egg-info/requires.txt
+[1.709s] writing top-level names to my_py_pkg.egg-info/top_level.txt
+[1.711s] reading manifest file 'my_py_pkg.egg-info/SOURCES.txt'
+[1.711s] writing manifest file 'my_py_pkg.egg-info/SOURCES.txt'
+[1.715s] running build_ext
+[1.715s] Creating /home/changye/ros2_ws3/install/my_py_pkg/lib/python3.10/site-packages/my-py-pkg.egg-link (link to .)
+[1.716s] Installing py_node script to /home/changye/ros2_ws3/install/my_py_pkg/lib/my_py_pkg
+[1.716s] Installing robot_news_station script to /home/changye/ros2_ws3/install/my_py_pkg/lib/my_py_pkg
+[1.716s] 
+[1.716s] Installed /home/changye/ros2_ws3/build/my_py_pkg
+[1.716s] running symlink_data
+[1.737s] Invoked command in '/home/changye/ros2_ws3/build/my_py_pkg' returned '0': PYTHONPATH=/home/changye/ros2_ws3/build/my_py_pkg/prefix_override:/home/changye/ros2_ws3/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws3/build/my_py_pkg/build --no-deps symlink_data

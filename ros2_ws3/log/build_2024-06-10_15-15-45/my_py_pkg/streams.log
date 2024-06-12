@@ -1,0 +1,21 @@
+[1.973s] Invoking command in '/home/changye/ros2_ws3/build/my_py_pkg': PYTHONPATH=/home/changye/ros2_ws3/build/my_py_pkg/prefix_override:/home/changye/ros2_ws3/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws3/build/my_py_pkg/build --no-deps symlink_data --force
+[2.447s] running develop
+[2.459s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.459s]   warnings.warn(
+[3.343s] running egg_info
+[3.344s] writing my_py_pkg.egg-info/PKG-INFO
+[3.344s] writing dependency_links to my_py_pkg.egg-info/dependency_links.txt
+[3.344s] writing entry points to my_py_pkg.egg-info/entry_points.txt
+[3.344s] writing requirements to my_py_pkg.egg-info/requires.txt
+[3.345s] writing top-level names to my_py_pkg.egg-info/top_level.txt
+[3.346s] reading manifest file 'my_py_pkg.egg-info/SOURCES.txt'
+[3.366s] writing manifest file 'my_py_pkg.egg-info/SOURCES.txt'
+[3.371s] running build_ext
+[3.371s] Creating /home/changye/ros2_ws3/install/my_py_pkg/lib/python3.10/site-packages/my-py-pkg.egg-link (link to .)
+[3.372s] Installing py_node = my_py_pkg.my_first_node:mainrobot_news_station script to /home/changye/ros2_ws3/install/my_py_pkg/lib/my_py_pkg
+[3.372s] 
+[3.372s] Installed /home/changye/ros2_ws3/build/my_py_pkg
+[3.372s] running symlink_data
+[3.372s] symbolically linking /home/changye/ros2_ws3/build/my_py_pkg/resource/my_py_pkg -> /home/changye/ros2_ws3/install/my_py_pkg/share/ament_index/resource_index/packages
+[3.372s] symbolically linking /home/changye/ros2_ws3/build/my_py_pkg/package.xml -> /home/changye/ros2_ws3/install/my_py_pkg/share/my_py_pkg
+[3.393s] Invoked command in '/home/changye/ros2_ws3/build/my_py_pkg' returned '0': PYTHONPATH=/home/changye/ros2_ws3/build/my_py_pkg/prefix_override:/home/changye/ros2_ws3/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/changye/ros2_ws3/build/my_py_pkg/build --no-deps symlink_data --force
