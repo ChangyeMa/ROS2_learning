@@ -1,0 +1,34 @@
+[0.617s] Invoking command in '/home/miles_ma/ROS2_learning/ros2_ws/src/my_py_pkg': PYTHONPATH=/home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/prefix_override:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build install --record /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data
+[0.830s] running egg_info
+[0.831s] writing ../../build/my_py_pkg/my_py_pkg.egg-info/PKG-INFO
+[0.832s] writing dependency_links to ../../build/my_py_pkg/my_py_pkg.egg-info/dependency_links.txt
+[0.832s] writing entry points to ../../build/my_py_pkg/my_py_pkg.egg-info/entry_points.txt
+[0.832s] writing requirements to ../../build/my_py_pkg/my_py_pkg.egg-info/requires.txt
+[0.832s] writing top-level names to ../../build/my_py_pkg/my_py_pkg.egg-info/top_level.txt
+[0.834s] reading manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[0.835s] writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[0.835s] running build
+[0.835s] running build_py
+[0.835s] copying my_py_pkg/LED_panel.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.836s] running install
+[0.836s] running install_lib
+[0.837s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/LED_panel.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.838s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/LED_panel.py to LED_panel.cpython-310.pyc
+[0.838s] running install_data
+[0.838s] running install_egg_info
+[0.839s] removing '/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.840s] Copying ../../build/my_py_pkg/my_py_pkg.egg-info to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg-0.0.0-py3.10.egg-info
+[0.841s] running install_scripts
+[0.856s] Installing add_two_ints_client script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.857s] Installing add_two_ints_client_no_oop script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.857s] Installing add_two_ints_server script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.857s] Installing battery script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.858s] Installing hw_status_publisher script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.858s] Installing led_panel script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.858s] Installing number_counter script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.858s] Installing number_publisher script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.858s] Installing py_node script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.859s] Installing robot_news_station script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.859s] Installing smartphone script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.859s] writing list of installed files to '/home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/install.log'
+[0.877s] Invoked command in '/home/miles_ma/ROS2_learning/ros2_ws/src/my_py_pkg' returned '0': PYTHONPATH=/home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/prefix_override:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build install --record /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data

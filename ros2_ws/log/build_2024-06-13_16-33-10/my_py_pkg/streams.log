@@ -1,0 +1,86 @@
+[0.602s] Invoking command in '/home/miles_ma/ROS2_learning/ros2_ws/src/my_py_pkg': PYTHONPATH=/home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/prefix_override:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build install --record /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data
+[0.809s] running egg_info
+[0.809s] creating ../../build/my_py_pkg/my_py_pkg.egg-info
+[0.810s] writing ../../build/my_py_pkg/my_py_pkg.egg-info/PKG-INFO
+[0.810s] writing dependency_links to ../../build/my_py_pkg/my_py_pkg.egg-info/dependency_links.txt
+[0.810s] writing entry points to ../../build/my_py_pkg/my_py_pkg.egg-info/entry_points.txt
+[0.810s] writing requirements to ../../build/my_py_pkg/my_py_pkg.egg-info/requires.txt
+[0.810s] writing top-level names to ../../build/my_py_pkg/my_py_pkg.egg-info/top_level.txt
+[0.810s] writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[0.812s] reading manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[0.813s] writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[0.813s] running build
+[0.813s] running build_py
+[0.813s] creating /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build
+[0.814s] creating /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib
+[0.814s] creating /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.814s] copying my_py_pkg/template_python_node.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.815s] copying my_py_pkg/robot_news_station.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.815s] copying my_py_pkg/my_first_node.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.815s] copying my_py_pkg/led_panel.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.815s] copying my_py_pkg/number_publisher.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.816s] copying my_py_pkg/__init__.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.816s] copying my_py_pkg/number_counter.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.816s] copying my_py_pkg/add_two_ints_client_no_oop.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.817s] copying my_py_pkg/smartphone.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.817s] copying my_py_pkg/add_two_ints_client.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.817s] copying my_py_pkg/template_python_node copy.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.817s] copying my_py_pkg/battery.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.818s] copying my_py_pkg/hw_status_publisher.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.818s] copying my_py_pkg/add_two_ints_server.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.818s] copying my_py_pkg/LED_panel.py -> /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[0.818s] running install
+[0.818s] running install_lib
+[0.819s] creating /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.819s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/template_python_node.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.819s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/robot_news_station.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.820s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/my_first_node.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.820s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/led_panel.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.820s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/number_publisher.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.820s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/__init__.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/number_counter.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/add_two_ints_client_no_oop.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/smartphone.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/add_two_ints_client.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/template_python_node copy.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/battery.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/hw_status_publisher.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.821s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/add_two_ints_server.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.822s] copying /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/LED_panel.py -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[0.822s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/template_python_node.py to template_python_node.cpython-310.pyc
+[0.822s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/robot_news_station.py to robot_news_station.cpython-310.pyc
+[0.823s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/my_first_node.py to my_first_node.cpython-310.pyc
+[0.823s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/led_panel.py to led_panel.cpython-310.pyc
+[0.823s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/number_publisher.py to number_publisher.cpython-310.pyc
+[0.824s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__init__.py to __init__.cpython-310.pyc
+[0.824s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/number_counter.py to number_counter.cpython-310.pyc
+[0.824s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/add_two_ints_client_no_oop.py to add_two_ints_client_no_oop.cpython-310.pyc
+[0.824s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/smartphone.py to smartphone.cpython-310.pyc
+[0.825s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/add_two_ints_client.py to add_two_ints_client.cpython-310.pyc
+[0.825s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/template_python_node copy.py to template_python_node copy.cpython-310.pyc
+[0.825s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/battery.py to battery.cpython-310.pyc
+[0.826s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/hw_status_publisher.py to hw_status_publisher.cpython-310.pyc
+[0.826s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/add_two_ints_server.py to add_two_ints_server.cpython-310.pyc
+[0.826s] byte-compiling /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/LED_panel.py to LED_panel.cpython-310.pyc
+[0.827s] running install_data
+[0.827s] creating /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/share/ament_index
+[0.827s] creating /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/share/ament_index/resource_index
+[0.827s] creating /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/share/ament_index/resource_index/packages
+[0.827s] copying resource/my_py_pkg -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/share/ament_index/resource_index/packages
+[0.827s] copying package.xml -> /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/share/my_py_pkg
+[0.828s] running install_egg_info
+[0.829s] Copying ../../build/my_py_pkg/my_py_pkg.egg-info to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg-0.0.0-py3.10.egg-info
+[0.830s] running install_scripts
+[0.845s] Installing add_two_ints_client script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.846s] Installing add_two_ints_client_no_oop script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.846s] Installing add_two_ints_server script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.846s] Installing battery script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.846s] Installing hw_status_publisher script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.846s] Installing led_panel script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.847s] Installing number_counter script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.847s] Installing number_publisher script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.847s] Installing py_node script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.847s] Installing robot_news_station script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.847s] Installing smartphone script to /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[0.847s] writing list of installed files to '/home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/install.log'
+[0.865s] Invoked command in '/home/miles_ma/ROS2_learning/ros2_ws/src/my_py_pkg' returned '0': PYTHONPATH=/home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/prefix_override:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/build install --record /home/miles_ma/ROS2_learning/ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data

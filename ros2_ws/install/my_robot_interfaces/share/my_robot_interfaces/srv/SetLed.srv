@@ -1,0 +1,4 @@
+int64 soc
+---
+float32[] states
+bool open
