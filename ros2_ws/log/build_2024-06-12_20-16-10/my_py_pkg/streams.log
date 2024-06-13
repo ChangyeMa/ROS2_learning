@@ -1,0 +1,55 @@
+[1.076s] Invoking command in '/home/changye/ROS2_learning/ros2_ws/src/my_py_pkg': PYTHONPATH=/home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/prefix_override:/home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build install --record /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data
+[1.475s] running egg_info
+[1.476s] writing ../../build/my_py_pkg/my_py_pkg.egg-info/PKG-INFO
+[1.476s] writing dependency_links to ../../build/my_py_pkg/my_py_pkg.egg-info/dependency_links.txt
+[1.476s] writing entry points to ../../build/my_py_pkg/my_py_pkg.egg-info/entry_points.txt
+[1.476s] writing requirements to ../../build/my_py_pkg/my_py_pkg.egg-info/requires.txt
+[1.476s] writing top-level names to ../../build/my_py_pkg/my_py_pkg.egg-info/top_level.txt
+[1.478s] reading manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[1.479s] writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'
+[1.479s] running build
+[1.479s] running build_py
+[1.479s] copying my_py_pkg/template_python_node.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/add_two_ints_client_no_oop.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/add_two_ints_server.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/number_counter.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/number_publisher.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/add_two_ints_client.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/smartphone.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/robot_news_station.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] copying my_py_pkg/my_first_node.py -> /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg
+[1.479s] running install
+[1.480s] running install_lib
+[1.480s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/template_python_node.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.480s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/add_two_ints_client_no_oop.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.480s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/add_two_ints_server.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.480s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/number_counter.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.480s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/number_publisher.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.481s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/add_two_ints_client.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.481s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/smartphone.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.481s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/robot_news_station.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.481s] copying /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build/lib/my_py_pkg/my_first_node.py -> /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg
+[1.482s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/template_python_node.py to template_python_node.cpython-310.pyc
+[1.483s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/add_two_ints_client_no_oop.py to add_two_ints_client_no_oop.cpython-310.pyc
+[1.483s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/add_two_ints_server.py to add_two_ints_server.cpython-310.pyc
+[1.483s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/number_counter.py to number_counter.cpython-310.pyc
+[1.483s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/number_publisher.py to number_publisher.cpython-310.pyc
+[1.484s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/add_two_ints_client.py to add_two_ints_client.cpython-310.pyc
+[1.484s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/smartphone.py to smartphone.cpython-310.pyc
+[1.484s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/robot_news_station.py to robot_news_station.cpython-310.pyc
+[1.484s] byte-compiling /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/my_first_node.py to my_first_node.cpython-310.pyc
+[1.485s] running install_data
+[1.485s] running install_egg_info
+[1.487s] removing '/home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.487s] Copying ../../build/my_py_pkg/my_py_pkg.egg-info to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg-0.0.0-py3.10.egg-info
+[1.488s] running install_scripts
+[1.515s] Installing add_two_ints_client script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] Installing add_two_ints_client_no_oop script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] Installing add_two_ints_server script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] Installing number_counter script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] Installing number_publisher script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] Installing py_node script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] Installing robot_news_station script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] Installing smartphone script to /home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/my_py_pkg
+[1.515s] writing list of installed files to '/home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/install.log'
+[1.533s] Invoked command in '/home/changye/ROS2_learning/ros2_ws/src/my_py_pkg' returned '0': PYTHONPATH=/home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/prefix_override:/home/changye/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_py_pkg build --build-base /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/build install --record /home/changye/ROS2_learning/ros2_ws/build/my_py_pkg/install.log --single-version-externally-managed install_data
