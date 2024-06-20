@@ -20,7 +20,8 @@ extern "C"
 /// Struct defined in srv/SetLed in the package my_robot_interfaces.
 typedef struct my_robot_interfaces__srv__SetLed_Request
 {
-  int64_t soc;
+  int64_t led_number;
+  int64_t state;
 } my_robot_interfaces__srv__SetLed_Request;
 
 // Struct for a sequence of my_robot_interfaces__srv__SetLed_Request.
@@ -36,15 +37,10 @@ typedef struct my_robot_interfaces__srv__SetLed_Request__Sequence
 
 // Constants defined in the message
 
-// Include directives for member types
-// Member 'states'
-#include "rosidl_runtime_c/primitives_sequence.h"
-
 /// Struct defined in srv/SetLed in the package my_robot_interfaces.
 typedef struct my_robot_interfaces__srv__SetLed_Response
 {
-  rosidl_runtime_c__float__Sequence states;
-  bool open;
+  bool success;
 } my_robot_interfaces__srv__SetLed_Response;
 
 // Struct for a sequence of my_robot_interfaces__srv__SetLed_Response.

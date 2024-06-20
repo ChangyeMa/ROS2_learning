@@ -25,10 +25,17 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: soc
+  // member: led_number
   {
-    out << "soc: ";
-    rosidl_generator_traits::value_to_yaml(msg.soc, out);
+    out << "led_number: ";
+    rosidl_generator_traits::value_to_yaml(msg.led_number, out);
+    out << ", ";
+  }
+
+  // member: state
+  {
+    out << "state: ";
+    rosidl_generator_traits::value_to_yaml(msg.state, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -37,13 +44,23 @@ inline void to_block_style_yaml(
   const SetLed_Request & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: soc
+  // member: led_number
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "soc: ";
-    rosidl_generator_traits::value_to_yaml(msg.soc, out);
+    out << "led_number: ";
+    rosidl_generator_traits::value_to_yaml(msg.led_number, out);
+    out << "\n";
+  }
+
+  // member: state
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "state: ";
+    rosidl_generator_traits::value_to_yaml(msg.state, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)
@@ -117,28 +134,10 @@ inline void to_flow_style_yaml(
   std::ostream & out)
 {
   out << "{";
-  // member: states
+  // member: success
   {
-    if (msg.states.size() == 0) {
-      out << "states: []";
-    } else {
-      out << "states: [";
-      size_t pending_items = msg.states.size();
-      for (auto item : msg.states) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: open
-  {
-    out << "open: ";
-    rosidl_generator_traits::value_to_yaml(msg.open, out);
+    out << "success: ";
+    rosidl_generator_traits::value_to_yaml(msg.success, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -147,33 +146,13 @@ inline void to_block_style_yaml(
   const SetLed_Response & msg,
   std::ostream & out, size_t indentation = 0)
 {
-  // member: states
+  // member: success
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.states.size() == 0) {
-      out << "states: []\n";
-    } else {
-      out << "states:\n";
-      for (auto item : msg.states) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: open
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "open: ";
-    rosidl_generator_traits::value_to_yaml(msg.open, out);
+    out << "success: ";
+    rosidl_generator_traits::value_to_yaml(msg.success, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)
@@ -224,11 +203,11 @@ inline const char * name<my_robot_interfaces::srv::SetLed_Response>()
 
 template<>
 struct has_fixed_size<my_robot_interfaces::srv::SetLed_Response>
-  : std::integral_constant<bool, false> {};
+  : std::integral_constant<bool, true> {};
 
 template<>
 struct has_bounded_size<my_robot_interfaces::srv::SetLed_Response>
-  : std::integral_constant<bool, false> {};
+  : std::integral_constant<bool, true> {};
 
 template<>
 struct is_message<my_robot_interfaces::srv::SetLed_Response>

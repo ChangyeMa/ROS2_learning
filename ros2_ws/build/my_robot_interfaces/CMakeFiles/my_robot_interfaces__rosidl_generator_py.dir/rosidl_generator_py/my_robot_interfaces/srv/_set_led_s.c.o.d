@@ -208,7 +208,5 @@ CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_r
  /usr/include/python3.10/numpy/__multiarray_api.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
  /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/srv/detail/set_led__struct.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
  /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/srv/detail/set_led__functions.h \
- /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/rosidl_generator_c__visibility_control.h \
- /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h
+ /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/rosidl_generator_c__visibility_control.h

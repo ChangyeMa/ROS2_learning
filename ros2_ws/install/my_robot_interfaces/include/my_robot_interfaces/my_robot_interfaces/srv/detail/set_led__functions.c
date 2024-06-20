@@ -16,7 +16,8 @@ my_robot_interfaces__srv__SetLed_Request__init(my_robot_interfaces__srv__SetLed_
   if (!msg) {
     return false;
   }
-  // soc
+  // led_number
+  // state
   return true;
 }
 
@@ -26,7 +27,8 @@ my_robot_interfaces__srv__SetLed_Request__fini(my_robot_interfaces__srv__SetLed_
   if (!msg) {
     return;
   }
-  // soc
+  // led_number
+  // state
 }
 
 bool
@@ -35,8 +37,12 @@ my_robot_interfaces__srv__SetLed_Request__are_equal(const my_robot_interfaces__s
   if (!lhs || !rhs) {
     return false;
   }
-  // soc
-  if (lhs->soc != rhs->soc) {
+  // led_number
+  if (lhs->led_number != rhs->led_number) {
+    return false;
+  }
+  // state
+  if (lhs->state != rhs->state) {
     return false;
   }
   return true;
@@ -50,8 +56,10 @@ my_robot_interfaces__srv__SetLed_Request__copy(
   if (!input || !output) {
     return false;
   }
-  // soc
-  output->soc = input->soc;
+  // led_number
+  output->led_number = input->led_number;
+  // state
+  output->state = input->state;
   return true;
 }
 
@@ -235,22 +243,13 @@ my_robot_interfaces__srv__SetLed_Request__Sequence__copy(
 }
 
 
-// Include directives for member types
-// Member `states`
-#include "rosidl_runtime_c/primitives_sequence_functions.h"
-
 bool
 my_robot_interfaces__srv__SetLed_Response__init(my_robot_interfaces__srv__SetLed_Response * msg)
 {
   if (!msg) {
     return false;
   }
-  // states
-  if (!rosidl_runtime_c__float__Sequence__init(&msg->states, 0)) {
-    my_robot_interfaces__srv__SetLed_Response__fini(msg);
-    return false;
-  }
-  // open
+  // success
   return true;
 }
 
@@ -260,9 +259,7 @@ my_robot_interfaces__srv__SetLed_Response__fini(my_robot_interfaces__srv__SetLed
   if (!msg) {
     return;
   }
-  // states
-  rosidl_runtime_c__float__Sequence__fini(&msg->states);
-  // open
+  // success
 }
 
 bool
@@ -271,14 +268,8 @@ my_robot_interfaces__srv__SetLed_Response__are_equal(const my_robot_interfaces__
   if (!lhs || !rhs) {
     return false;
   }
-  // states
-  if (!rosidl_runtime_c__float__Sequence__are_equal(
-      &(lhs->states), &(rhs->states)))
-  {
-    return false;
-  }
-  // open
-  if (lhs->open != rhs->open) {
+  // success
+  if (lhs->success != rhs->success) {
     return false;
   }
   return true;
@@ -292,14 +283,8 @@ my_robot_interfaces__srv__SetLed_Response__copy(
   if (!input || !output) {
     return false;
   }
-  // states
-  if (!rosidl_runtime_c__float__Sequence__copy(
-      &(input->states), &(output->states)))
-  {
-    return false;
-  }
-  // open
-  output->open = input->open;
+  // success
+  output->success = input->success;
   return true;
 }
 

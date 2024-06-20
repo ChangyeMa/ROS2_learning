@@ -38,7 +38,8 @@ struct SetLed_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->soc = 0ll;
+      this->led_number = 0ll;
+      this->state = 0ll;
     }
   }
 
@@ -48,20 +49,30 @@ struct SetLed_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->soc = 0ll;
+      this->led_number = 0ll;
+      this->state = 0ll;
     }
   }
 
   // field types and members
-  using _soc_type =
+  using _led_number_type =
     int64_t;
-  _soc_type soc;
+  _led_number_type led_number;
+  using _state_type =
+    int64_t;
+  _state_type state;
 
   // setters for named parameter idiom
-  Type & set__soc(
+  Type & set__led_number(
     const int64_t & _arg)
   {
-    this->soc = _arg;
+    this->led_number = _arg;
+    return *this;
+  }
+  Type & set__state(
+    const int64_t & _arg)
+  {
+    this->state = _arg;
     return *this;
   }
 
@@ -107,7 +118,10 @@ struct SetLed_Request_
   // comparison operators
   bool operator==(const SetLed_Request_ & other) const
   {
-    if (this->soc != other.soc) {
+    if (this->led_number != other.led_number) {
+      return false;
+    }
+    if (this->state != other.state) {
       return false;
     }
     return true;
@@ -152,7 +166,7 @@ struct SetLed_Response_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->open = false;
+      this->success = false;
     }
   }
 
@@ -162,29 +176,20 @@ struct SetLed_Response_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->open = false;
+      this->success = false;
     }
   }
 
   // field types and members
-  using _states_type =
-    std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>>;
-  _states_type states;
-  using _open_type =
+  using _success_type =
     bool;
-  _open_type open;
+  _success_type success;
 
   // setters for named parameter idiom
-  Type & set__states(
-    const std::vector<float, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<float>> & _arg)
-  {
-    this->states = _arg;
-    return *this;
-  }
-  Type & set__open(
+  Type & set__success(
     const bool & _arg)
   {
-    this->open = _arg;
+    this->success = _arg;
     return *this;
   }
 
@@ -230,10 +235,7 @@ struct SetLed_Response_
   // comparison operators
   bool operator==(const SetLed_Response_ & other) const
   {
-    if (this->states != other.states) {
-      return false;
-    }
-    if (this->open != other.open) {
+    if (this->success != other.success) {
       return false;
     }
     return true;

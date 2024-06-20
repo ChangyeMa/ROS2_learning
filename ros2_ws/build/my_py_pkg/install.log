@@ -12,7 +12,6 @@
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/battery.py
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/hw_status_publisher.py
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/add_two_ints_server.py
-/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/LED_panel.py
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__pycache__/template_python_node.cpython-310.pyc
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__pycache__/robot_news_station.cpython-310.pyc
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__pycache__/my_first_node.cpython-310.pyc
@@ -27,7 +26,6 @@
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__pycache__/battery.cpython-310.pyc
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__pycache__/hw_status_publisher.cpython-310.pyc
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__pycache__/add_two_ints_server.cpython-310.pyc
-/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg/__pycache__/LED_panel.cpython-310.pyc
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/share/ament_index/resource_index/packages/my_py_pkg
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/share/my_py_pkg/package.xml
 /home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg/lib/python3.10/site-packages/my_py_pkg-0.0.0-py3.10.egg-info/dependency_links.txt

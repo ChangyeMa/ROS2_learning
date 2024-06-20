@@ -31,16 +31,33 @@ void my_robot_interfaces__srv__SetLed_Request__rosidl_typesupport_introspection_
   my_robot_interfaces__srv__SetLed_Request__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__srv__SetLed_Request__rosidl_typesupport_introspection_c__SetLed_Request_message_member_array[1] = {
+static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__srv__SetLed_Request__rosidl_typesupport_introspection_c__SetLed_Request_message_member_array[2] = {
   {
-    "soc",  // name
+    "led_number",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(my_robot_interfaces__srv__SetLed_Request, soc),  // bytes offset in struct
+    offsetof(my_robot_interfaces__srv__SetLed_Request, led_number),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "state",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_INT64,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(my_robot_interfaces__srv__SetLed_Request, state),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -54,7 +71,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__sr
 static const rosidl_typesupport_introspection_c__MessageMembers my_robot_interfaces__srv__SetLed_Request__rosidl_typesupport_introspection_c__SetLed_Request_message_members = {
   "my_robot_interfaces__srv",  // message namespace
   "SetLed_Request",  // message name
-  1,  // number of fields
+  2,  // number of fields
   sizeof(my_robot_interfaces__srv__SetLed_Request),
   my_robot_interfaces__srv__SetLed_Request__rosidl_typesupport_introspection_c__SetLed_Request_message_member_array,  // message members
   my_robot_interfaces__srv__SetLed_Request__rosidl_typesupport_introspection_c__SetLed_Request_init_function,  // function to initialize message memory (memory has to be allocated)
@@ -100,10 +117,6 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 // #include "my_robot_interfaces/srv/detail/set_led__struct.h"
 
 
-// Include directives for member types
-// Member `states`
-#include "rosidl_runtime_c/primitives_sequence_functions.h"
-
 #ifdef __cplusplus
 extern "C"
 {
@@ -123,88 +136,16 @@ void my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection
   my_robot_interfaces__srv__SetLed_Response__fini(message_memory);
 }
 
-size_t my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__size_function__SetLed_Response__states(
-  const void * untyped_member)
-{
-  const rosidl_runtime_c__float__Sequence * member =
-    (const rosidl_runtime_c__float__Sequence *)(untyped_member);
-  return member->size;
-}
-
-const void * my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__get_const_function__SetLed_Response__states(
-  const void * untyped_member, size_t index)
-{
-  const rosidl_runtime_c__float__Sequence * member =
-    (const rosidl_runtime_c__float__Sequence *)(untyped_member);
-  return &member->data[index];
-}
-
-void * my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__get_function__SetLed_Response__states(
-  void * untyped_member, size_t index)
-{
-  rosidl_runtime_c__float__Sequence * member =
-    (rosidl_runtime_c__float__Sequence *)(untyped_member);
-  return &member->data[index];
-}
-
-void my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__fetch_function__SetLed_Response__states(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const float * item =
-    ((const float *)
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__get_const_function__SetLed_Response__states(untyped_member, index));
-  float * value =
-    (float *)(untyped_value);
-  *value = *item;
-}
-
-void my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__assign_function__SetLed_Response__states(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  float * item =
-    ((float *)
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__get_function__SetLed_Response__states(untyped_member, index));
-  const float * value =
-    (const float *)(untyped_value);
-  *item = *value;
-}
-
-bool my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__resize_function__SetLed_Response__states(
-  void * untyped_member, size_t size)
-{
-  rosidl_runtime_c__float__Sequence * member =
-    (rosidl_runtime_c__float__Sequence *)(untyped_member);
-  rosidl_runtime_c__float__Sequence__fini(member);
-  return rosidl_runtime_c__float__Sequence__init(member, size);
-}
-
-static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__SetLed_Response_message_member_array[2] = {
+static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__SetLed_Response_message_member_array[1] = {
   {
-    "states",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    true,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(my_robot_interfaces__srv__SetLed_Response, states),  // bytes offset in struct
-    NULL,  // default value
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__size_function__SetLed_Response__states,  // size() function pointer
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__get_const_function__SetLed_Response__states,  // get_const(index) function pointer
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__get_function__SetLed_Response__states,  // get(index) function pointer
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__fetch_function__SetLed_Response__states,  // fetch(index, &value) function pointer
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__assign_function__SetLed_Response__states,  // assign(index, value) function pointer
-    my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__resize_function__SetLed_Response__states  // resize(index) function pointer
-  },
-  {
-    "open",  // name
+    "success",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(my_robot_interfaces__srv__SetLed_Response, open),  // bytes offset in struct
+    offsetof(my_robot_interfaces__srv__SetLed_Response, success),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -218,7 +159,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__sr
 static const rosidl_typesupport_introspection_c__MessageMembers my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__SetLed_Response_message_members = {
   "my_robot_interfaces__srv",  // message namespace
   "SetLed_Response",  // message name
-  2,  // number of fields
+  1,  // number of fields
   sizeof(my_robot_interfaces__srv__SetLed_Response),
   my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__SetLed_Response_message_member_array,  // message members
   my_robot_interfaces__srv__SetLed_Response__rosidl_typesupport_introspection_c__SetLed_Response_init_function,  // function to initialize message memory (memory has to be allocated)

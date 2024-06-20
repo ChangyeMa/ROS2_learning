@@ -32,8 +32,10 @@ cdr_serialize(
   const my_robot_interfaces::srv::SetLed_Request & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: soc
-  cdr << ros_message.soc;
+  // Member: led_number
+  cdr << ros_message.led_number;
+  // Member: state
+  cdr << ros_message.state;
   return true;
 }
 
@@ -43,8 +45,11 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   my_robot_interfaces::srv::SetLed_Request & ros_message)
 {
-  // Member: soc
-  cdr >> ros_message.soc;
+  // Member: led_number
+  cdr >> ros_message.led_number;
+
+  // Member: state
+  cdr >> ros_message.state;
 
   return true;
 }
@@ -62,9 +67,15 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: soc
+  // Member: led_number
   {
-    size_t item_size = sizeof(ros_message.soc);
+    size_t item_size = sizeof(ros_message.led_number);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: state
+  {
+    size_t item_size = sizeof(ros_message.state);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -92,7 +103,16 @@ max_serialized_size_SetLed_Request(
   is_plain = true;
 
 
-  // Member: soc
+  // Member: led_number
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
+  // Member: state
   {
     size_t array_size = 1;
 
@@ -109,7 +129,7 @@ max_serialized_size_SetLed_Request(
     using DataType = my_robot_interfaces::srv::SetLed_Request;
     is_plain =
       (
-      offsetof(DataType, soc) +
+      offsetof(DataType, state) +
       last_member_size
       ) == ret_val;
   }
@@ -245,12 +265,8 @@ cdr_serialize(
   const my_robot_interfaces::srv::SetLed_Response & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: states
-  {
-    cdr << ros_message.states;
-  }
-  // Member: open
-  cdr << (ros_message.open ? true : false);
+  // Member: success
+  cdr << (ros_message.success ? true : false);
   return true;
 }
 
@@ -260,16 +276,11 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   my_robot_interfaces::srv::SetLed_Response & ros_message)
 {
-  // Member: states
-  {
-    cdr >> ros_message.states;
-  }
-
-  // Member: open
+  // Member: success
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message.open = tmp ? true : false;
+    ros_message.success = tmp ? true : false;
   }
 
   return true;
@@ -288,19 +299,9 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: states
+  // Member: success
   {
-    size_t array_size = ros_message.states.size();
-
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    size_t item_size = sizeof(ros_message.states[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: open
-  {
-    size_t item_size = sizeof(ros_message.open);
+    size_t item_size = sizeof(ros_message.success);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -328,20 +329,7 @@ max_serialized_size_SetLed_Response(
   is_plain = true;
 
 
-  // Member: states
-  {
-    size_t array_size = 0;
-    full_bounded = false;
-    is_plain = false;
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: open
+  // Member: success
   {
     size_t array_size = 1;
 
@@ -357,7 +345,7 @@ max_serialized_size_SetLed_Response(
     using DataType = my_robot_interfaces::srv::SetLed_Response;
     is_plain =
       (
-      offsetof(DataType, open) +
+      offsetof(DataType, success) +
       last_member_size
       ) == ret_val;
   }

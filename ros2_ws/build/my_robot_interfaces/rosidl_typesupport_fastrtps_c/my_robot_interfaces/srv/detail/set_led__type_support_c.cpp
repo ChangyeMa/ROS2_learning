@@ -49,9 +49,14 @@ static bool _SetLed_Request__cdr_serialize(
     return false;
   }
   const _SetLed_Request__ros_msg_type * ros_message = static_cast<const _SetLed_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: soc
+  // Field name: led_number
   {
-    cdr << ros_message->soc;
+    cdr << ros_message->led_number;
+  }
+
+  // Field name: state
+  {
+    cdr << ros_message->state;
   }
 
   return true;
@@ -66,9 +71,14 @@ static bool _SetLed_Request__cdr_deserialize(
     return false;
   }
   _SetLed_Request__ros_msg_type * ros_message = static_cast<_SetLed_Request__ros_msg_type *>(untyped_ros_message);
-  // Field name: soc
+  // Field name: led_number
   {
-    cdr >> ros_message->soc;
+    cdr >> ros_message->led_number;
+  }
+
+  // Field name: state
+  {
+    cdr >> ros_message->state;
   }
 
   return true;
@@ -88,9 +98,15 @@ size_t get_serialized_size_my_robot_interfaces__srv__SetLed_Request(
   (void)padding;
   (void)wchar_size;
 
-  // field.name soc
+  // field.name led_number
   {
-    size_t item_size = sizeof(ros_message->soc);
+    size_t item_size = sizeof(ros_message->led_number);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name state
+  {
+    size_t item_size = sizeof(ros_message->state);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -123,7 +139,15 @@ size_t max_serialized_size_my_robot_interfaces__srv__SetLed_Request(
   full_bounded = true;
   is_plain = true;
 
-  // member: soc
+  // member: led_number
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: state
   {
     size_t array_size = 1;
 
@@ -140,7 +164,7 @@ size_t max_serialized_size_my_robot_interfaces__srv__SetLed_Request(
     using DataType = my_robot_interfaces__srv__SetLed_Request;
     is_plain =
       (
-      offsetof(DataType, soc) +
+      offsetof(DataType, state) +
       last_member_size
       ) == ret_val;
   }
@@ -228,8 +252,6 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/primitives_sequence.h"  // states
-#include "rosidl_runtime_c/primitives_sequence_functions.h"  // states
 
 // forward declare type support functions
 
@@ -245,17 +267,9 @@ static bool _SetLed_Response__cdr_serialize(
     return false;
   }
   const _SetLed_Response__ros_msg_type * ros_message = static_cast<const _SetLed_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: states
+  // Field name: success
   {
-    size_t size = ros_message->states.size;
-    auto array_ptr = ros_message->states.data;
-    cdr << static_cast<uint32_t>(size);
-    cdr.serializeArray(array_ptr, size);
-  }
-
-  // Field name: open
-  {
-    cdr << (ros_message->open ? true : false);
+    cdr << (ros_message->success ? true : false);
   }
 
   return true;
@@ -270,27 +284,11 @@ static bool _SetLed_Response__cdr_deserialize(
     return false;
   }
   _SetLed_Response__ros_msg_type * ros_message = static_cast<_SetLed_Response__ros_msg_type *>(untyped_ros_message);
-  // Field name: states
-  {
-    uint32_t cdrSize;
-    cdr >> cdrSize;
-    size_t size = static_cast<size_t>(cdrSize);
-    if (ros_message->states.data) {
-      rosidl_runtime_c__float__Sequence__fini(&ros_message->states);
-    }
-    if (!rosidl_runtime_c__float__Sequence__init(&ros_message->states, size)) {
-      fprintf(stderr, "failed to create array for field 'states'");
-      return false;
-    }
-    auto array_ptr = ros_message->states.data;
-    cdr.deserializeArray(array_ptr, size);
-  }
-
-  // Field name: open
+  // Field name: success
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->open = tmp ? true : false;
+    ros_message->success = tmp ? true : false;
   }
 
   return true;
@@ -310,20 +308,9 @@ size_t get_serialized_size_my_robot_interfaces__srv__SetLed_Response(
   (void)padding;
   (void)wchar_size;
 
-  // field.name states
+  // field.name success
   {
-    size_t array_size = ros_message->states.size;
-    auto array_ptr = ros_message->states.data;
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-    (void)array_ptr;
-    size_t item_size = sizeof(array_ptr[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // field.name open
-  {
-    size_t item_size = sizeof(ros_message->open);
+    size_t item_size = sizeof(ros_message->success);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -356,19 +343,7 @@ size_t max_serialized_size_my_robot_interfaces__srv__SetLed_Response(
   full_bounded = true;
   is_plain = true;
 
-  // member: states
-  {
-    size_t array_size = 0;
-    full_bounded = false;
-    is_plain = false;
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-    last_member_size = array_size * sizeof(uint32_t);
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-  // member: open
+  // member: success
   {
     size_t array_size = 1;
 
@@ -384,7 +359,7 @@ size_t max_serialized_size_my_robot_interfaces__srv__SetLed_Response(
     using DataType = my_robot_interfaces__srv__SetLed_Response;
     is_plain =
       (
-      offsetof(DataType, open) +
+      offsetof(DataType, success) +
       last_member_size
       ) == ret_val;
   }

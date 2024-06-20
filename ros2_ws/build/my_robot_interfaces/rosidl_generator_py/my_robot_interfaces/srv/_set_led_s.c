@@ -50,13 +50,22 @@ bool my_robot_interfaces__srv__set_led__request__convert_from_py(PyObject * _pym
     assert(strncmp("my_robot_interfaces.srv._set_led.SetLed_Request", full_classname_dest, 47) == 0);
   }
   my_robot_interfaces__srv__SetLed_Request * ros_message = _ros_message;
-  {  // soc
-    PyObject * field = PyObject_GetAttrString(_pymsg, "soc");
+  {  // led_number
+    PyObject * field = PyObject_GetAttrString(_pymsg, "led_number");
     if (!field) {
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->soc = PyLong_AsLongLong(field);
+    ros_message->led_number = PyLong_AsLongLong(field);
+    Py_DECREF(field);
+  }
+  {  // state
+    PyObject * field = PyObject_GetAttrString(_pymsg, "state");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->state = PyLong_AsLongLong(field);
     Py_DECREF(field);
   }
 
@@ -81,11 +90,22 @@ PyObject * my_robot_interfaces__srv__set_led__request__convert_to_py(void * raw_
     }
   }
   my_robot_interfaces__srv__SetLed_Request * ros_message = (my_robot_interfaces__srv__SetLed_Request *)raw_ros_message;
-  {  // soc
+  {  // led_number
     PyObject * field = NULL;
-    field = PyLong_FromLongLong(ros_message->soc);
+    field = PyLong_FromLongLong(ros_message->led_number);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "soc", field);
+      int rc = PyObject_SetAttrString(_pymessage, "led_number", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // state
+    PyObject * field = NULL;
+    field = PyLong_FromLongLong(ros_message->state);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "state", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -110,9 +130,6 @@ PyObject * my_robot_interfaces__srv__set_led__request__convert_to_py(void * raw_
 // #include "my_robot_interfaces/srv/detail/set_led__struct.h"
 // already included above
 // #include "my_robot_interfaces/srv/detail/set_led__functions.h"
-
-#include "rosidl_runtime_c/primitives_sequence.h"
-#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 
 ROSIDL_GENERATOR_C_EXPORT
@@ -148,75 +165,13 @@ bool my_robot_interfaces__srv__set_led__response__convert_from_py(PyObject * _py
     assert(strncmp("my_robot_interfaces.srv._set_led.SetLed_Response", full_classname_dest, 48) == 0);
   }
   my_robot_interfaces__srv__SetLed_Response * ros_message = _ros_message;
-  {  // states
-    PyObject * field = PyObject_GetAttrString(_pymsg, "states");
-    if (!field) {
-      return false;
-    }
-    if (PyObject_CheckBuffer(field)) {
-      // Optimization for converting arrays of primitives
-      Py_buffer view;
-      int rc = PyObject_GetBuffer(field, &view, PyBUF_SIMPLE);
-      if (rc < 0) {
-        Py_DECREF(field);
-        return false;
-      }
-      Py_ssize_t size = view.len / sizeof(float);
-      if (!rosidl_runtime_c__float__Sequence__init(&(ros_message->states), size)) {
-        PyErr_SetString(PyExc_RuntimeError, "unable to create float__Sequence ros_message");
-        PyBuffer_Release(&view);
-        Py_DECREF(field);
-        return false;
-      }
-      float * dest = ros_message->states.data;
-      rc = PyBuffer_ToContiguous(dest, &view, view.len, 'C');
-      if (rc < 0) {
-        PyBuffer_Release(&view);
-        Py_DECREF(field);
-        return false;
-      }
-      PyBuffer_Release(&view);
-    } else {
-      PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'states'");
-      if (!seq_field) {
-        Py_DECREF(field);
-        return false;
-      }
-      Py_ssize_t size = PySequence_Size(field);
-      if (-1 == size) {
-        Py_DECREF(seq_field);
-        Py_DECREF(field);
-        return false;
-      }
-      if (!rosidl_runtime_c__float__Sequence__init(&(ros_message->states), size)) {
-        PyErr_SetString(PyExc_RuntimeError, "unable to create float__Sequence ros_message");
-        Py_DECREF(seq_field);
-        Py_DECREF(field);
-        return false;
-      }
-      float * dest = ros_message->states.data;
-      for (Py_ssize_t i = 0; i < size; ++i) {
-        PyObject * item = PySequence_Fast_GET_ITEM(seq_field, i);
-        if (!item) {
-          Py_DECREF(seq_field);
-          Py_DECREF(field);
-          return false;
-        }
-        assert(PyFloat_Check(item));
-        float tmp = (float)PyFloat_AS_DOUBLE(item);
-        memcpy(&dest[i], &tmp, sizeof(float));
-      }
-      Py_DECREF(seq_field);
-    }
-    Py_DECREF(field);
-  }
-  {  // open
-    PyObject * field = PyObject_GetAttrString(_pymsg, "open");
+  {  // success
+    PyObject * field = PyObject_GetAttrString(_pymsg, "success");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->open = (Py_True == field);
+    ros_message->success = (Py_True == field);
     Py_DECREF(field);
   }
 
@@ -241,68 +196,11 @@ PyObject * my_robot_interfaces__srv__set_led__response__convert_to_py(void * raw
     }
   }
   my_robot_interfaces__srv__SetLed_Response * ros_message = (my_robot_interfaces__srv__SetLed_Response *)raw_ros_message;
-  {  // states
+  {  // success
     PyObject * field = NULL;
-    field = PyObject_GetAttrString(_pymessage, "states");
-    if (!field) {
-      return NULL;
-    }
-    assert(field->ob_type != NULL);
-    assert(field->ob_type->tp_name != NULL);
-    assert(strcmp(field->ob_type->tp_name, "array.array") == 0);
-    // ensure that itemsize matches the sizeof of the ROS message field
-    PyObject * itemsize_attr = PyObject_GetAttrString(field, "itemsize");
-    assert(itemsize_attr != NULL);
-    size_t itemsize = PyLong_AsSize_t(itemsize_attr);
-    Py_DECREF(itemsize_attr);
-    if (itemsize != sizeof(float)) {
-      PyErr_SetString(PyExc_RuntimeError, "itemsize doesn't match expectation");
-      Py_DECREF(field);
-      return NULL;
-    }
-    // clear the array, poor approach to remove potential default values
-    Py_ssize_t length = PyObject_Length(field);
-    if (-1 == length) {
-      Py_DECREF(field);
-      return NULL;
-    }
-    if (length > 0) {
-      PyObject * pop = PyObject_GetAttrString(field, "pop");
-      assert(pop != NULL);
-      for (Py_ssize_t i = 0; i < length; ++i) {
-        PyObject * ret = PyObject_CallFunctionObjArgs(pop, NULL);
-        if (!ret) {
-          Py_DECREF(pop);
-          Py_DECREF(field);
-          return NULL;
-        }
-        Py_DECREF(ret);
-      }
-      Py_DECREF(pop);
-    }
-    if (ros_message->states.size > 0) {
-      // populating the array.array using the frombytes method
-      PyObject * frombytes = PyObject_GetAttrString(field, "frombytes");
-      assert(frombytes != NULL);
-      float * src = &(ros_message->states.data[0]);
-      PyObject * data = PyBytes_FromStringAndSize((const char *)src, ros_message->states.size * sizeof(float));
-      assert(data != NULL);
-      PyObject * ret = PyObject_CallFunctionObjArgs(frombytes, data, NULL);
-      Py_DECREF(data);
-      Py_DECREF(frombytes);
-      if (!ret) {
-        Py_DECREF(field);
-        return NULL;
-      }
-      Py_DECREF(ret);
-    }
-    Py_DECREF(field);
-  }
-  {  // open
-    PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->open ? 1 : 0);
+    field = PyBool_FromLong(ros_message->success ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "open", field);
+      int rc = PyObject_SetAttrString(_pymessage, "success", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -1,4 +1,4 @@
-int64 soc
+int64 led_number
+int64 state
 ---
-float32[] states
-bool open
+bool success

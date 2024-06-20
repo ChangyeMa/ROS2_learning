@@ -55,14 +55,17 @@ class SetLed_Request(metaclass=Metaclass_SetLed_Request):
     """Message class 'SetLed_Request'."""
 
     __slots__ = [
-        '_soc',
+        '_led_number',
+        '_state',
     ]
 
     _fields_and_field_types = {
-        'soc': 'int64',
+        'led_number': 'int64',
+        'state': 'int64',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('int64'),  # noqa: E501
         rosidl_parser.definition.BasicType('int64'),  # noqa: E501
     )
 
@@ -70,7 +73,8 @@ class SetLed_Request(metaclass=Metaclass_SetLed_Request):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.soc = kwargs.get('soc', int())
+        self.led_number = kwargs.get('led_number', int())
+        self.state = kwargs.get('state', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -101,7 +105,9 @@ class SetLed_Request(metaclass=Metaclass_SetLed_Request):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.soc != other.soc:
+        if self.led_number != other.led_number:
+            return False
+        if self.state != other.state:
             return False
         return True
 
@@ -111,30 +117,40 @@ class SetLed_Request(metaclass=Metaclass_SetLed_Request):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def soc(self):
-        """Message field 'soc'."""
-        return self._soc
+    def led_number(self):
+        """Message field 'led_number'."""
+        return self._led_number
 
-    @soc.setter
-    def soc(self, value):
+    @led_number.setter
+    def led_number(self, value):
         if __debug__:
             assert \
                 isinstance(value, int), \
-                "The 'soc' field must be of type 'int'"
+                "The 'led_number' field must be of type 'int'"
             assert value >= -9223372036854775808 and value < 9223372036854775808, \
-                "The 'soc' field must be an integer in [-9223372036854775808, 9223372036854775807]"
-        self._soc = value
+                "The 'led_number' field must be an integer in [-9223372036854775808, 9223372036854775807]"
+        self._led_number = value
+
+    @builtins.property
+    def state(self):
+        """Message field 'state'."""
+        return self._state
+
+    @state.setter
+    def state(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'state' field must be of type 'int'"
+            assert value >= -9223372036854775808 and value < 9223372036854775808, \
+                "The 'state' field must be an integer in [-9223372036854775808, 9223372036854775807]"
+        self._state = value
 
 
 # Import statements for member types
 
-# Member 'states'
-import array  # noqa: E402, I100
-
 # already imported above
 # import builtins
-
-import math  # noqa: E402, I100
 
 # already imported above
 # import rosidl_parser.definition
@@ -185,17 +201,14 @@ class SetLed_Response(metaclass=Metaclass_SetLed_Response):
     """Message class 'SetLed_Response'."""
 
     __slots__ = [
-        '_states',
-        '_open',
+        '_success',
     ]
 
     _fields_and_field_types = {
-        'states': 'sequence<float>',
-        'open': 'boolean',
+        'success': 'boolean',
     }
 
     SLOT_TYPES = (
-        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('float')),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
@@ -203,8 +216,7 @@ class SetLed_Response(metaclass=Metaclass_SetLed_Response):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.states = array.array('f', kwargs.get('states', []))
-        self.open = kwargs.get('open', bool())
+        self.success = kwargs.get('success', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -235,9 +247,7 @@ class SetLed_Response(metaclass=Metaclass_SetLed_Response):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.states != other.states:
-            return False
-        if self.open != other.open:
+        if self.success != other.success:
             return False
         return True
 
@@ -247,45 +257,17 @@ class SetLed_Response(metaclass=Metaclass_SetLed_Response):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def states(self):
-        """Message field 'states'."""
-        return self._states
+    def success(self):
+        """Message field 'success'."""
+        return self._success
 
-    @states.setter
-    def states(self, value):
-        if isinstance(value, array.array):
-            assert value.typecode == 'f', \
-                "The 'states' array.array() must have the type code of 'f'"
-            self._states = value
-            return
-        if __debug__:
-            from collections.abc import Sequence
-            from collections.abc import Set
-            from collections import UserList
-            from collections import UserString
-            assert \
-                ((isinstance(value, Sequence) or
-                  isinstance(value, Set) or
-                  isinstance(value, UserList)) and
-                 not isinstance(value, str) and
-                 not isinstance(value, UserString) and
-                 all(isinstance(v, float) for v in value) and
-                 all(not (val < -3.402823466e+38 or val > 3.402823466e+38) or math.isinf(val) for val in value)), \
-                "The 'states' field must be a set or sequence and each value of type 'float' and each float in [-340282346600000016151267322115014000640.000000, 340282346600000016151267322115014000640.000000]"
-        self._states = array.array('f', value)
-
-    @builtins.property  # noqa: A003
-    def open(self):  # noqa: A003
-        """Message field 'open'."""
-        return self._open
-
-    @open.setter  # noqa: A003
-    def open(self, value):  # noqa: A003
+    @success.setter
+    def success(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'open' field must be of type 'bool'"
-        self._open = value
+                "The 'success' field must be of type 'bool'"
+        self._success = value
 
 
 class Metaclass_SetLed(type):
