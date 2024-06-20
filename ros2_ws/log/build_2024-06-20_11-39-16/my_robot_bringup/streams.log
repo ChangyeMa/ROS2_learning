@@ -1,0 +1,42 @@
+[0.012s] Invoking command in '/home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg:/opt/ros/humble /usr/bin/cmake /home/miles_ma/ROS2_learning/ros2_ws/src/my_robot_bringup -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup
+[0.282s] -- The C compiler identification is GNU 11.4.0
+[0.497s] -- The CXX compiler identification is GNU 11.4.0
+[0.616s] -- Detecting C compiler ABI info
+[0.706s] -- Detecting C compiler ABI info - done
+[0.712s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.714s] -- Detecting C compile features
+[0.716s] -- Detecting C compile features - done
+[0.722s] -- Detecting CXX compiler ABI info
+[0.801s] -- Detecting CXX compiler ABI info - done
+[0.807s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.808s] -- Detecting CXX compile features
+[0.808s] -- Detecting CXX compile features - done
+[0.831s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.967s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.029s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.127s] -- Configuring done
+[1.129s] -- Generating done
+[1.130s] -- Build files have been written to: /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup
+[1.134s] Invoked command in '/home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg:/opt/ros/humble /usr/bin/cmake /home/miles_ma/ROS2_learning/ros2_ws/src/my_robot_bringup -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup
+[1.136s] Invoking command in '/home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup -- -j12 -l12
+[1.162s] Invoked command in '/home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg:/opt/ros/humble /usr/bin/cmake --build /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup -- -j12 -l12
+[1.185s] Invoking command in '/home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg:/opt/ros/humble /usr/bin/cmake --install /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup
+[1.190s] -- Install configuration: ""
+[1.190s] -- Execute custom install script
+[1.191s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/launch/number_app.launch.py
+[1.197s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/ament_index/resource_index/package_run_dependencies/my_robot_bringup
+[1.202s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/ament_index/resource_index/parent_prefix_path/my_robot_bringup
+[1.208s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.sh
+[1.214s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.dsv
+[1.220s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/environment/path.sh
+[1.225s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/environment/path.dsv
+[1.231s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.bash
+[1.237s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.sh
+[1.243s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.zsh
+[1.250s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/local_setup.dsv
+[1.256s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/package.dsv
+[1.262s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/ament_index/resource_index/packages/my_robot_bringup
+[1.267s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig.cmake
+[1.273s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig-version.cmake
+[1.278s] -- Symlinking: /home/miles_ma/ROS2_learning/ros2_ws/install/my_robot_bringup/share/my_robot_bringup/package.xml
+[1.285s] Invoked command in '/home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/miles_ma/ROS2_learning/ros2_ws/install/my_py_pkg:/opt/ros/humble /usr/bin/cmake --install /home/miles_ma/ROS2_learning/ros2_ws/build/my_robot_bringup

@@ -8,13 +8,18 @@ class MyNode(Node):
         super().__init__("py_test")
         # the node name can be changed dynamcially when lanunching the node:
         # for example: "ros2 run my_py_pkg py_node --ros-args -r __node:=new_node_name"
+        self.declare_parameter("robot_name","Blitz")
+
+        self.robot_name_= self.get_parameter("robot_name").value
+
         self.counter_=0
         self.get_logger().info("Hello ROS2")
         self.create_timer(1, self.timer_callback)
 
     def timer_callback(self):
         self.counter_ += 1
-        self.get_logger().info("Hello"+ str(self.counter_))
+        self.get_logger().info("Hello"+ str(self.counter_)
+                               +"this is "+self.robot_name_)
 
 def main(args=None):
     rclpy.init(args=args)   # needed to initialize the ROS2 client library for every ROS2 node
