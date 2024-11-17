@@ -44,9 +44,9 @@ class TagDetectionNode(Node): # MODIFY NAME
 
         # define tag world coordinates in meters
         self.tags_world_positions={ 0:np.array([[0],[0],[0]]),
-                                    1:np.array([[0],[3],[0]]),
-                                    2:np.array([[3],[3],[0]]),
-                                    3:np.array([[-3],[0],[0]])}
+                                    1:np.array([[-2.5],[2.5],[0]]),
+                                    2:np.array([[2.5],[2.5],[0]]),
+                                    3:np.array([[0],[2.5],[0]])}
 
         # define basic camera parameters
         self.fx=600
@@ -71,17 +71,23 @@ class TagDetectionNode(Node): # MODIFY NAME
         print(f"Publishing detected tags on topic: {self.pub_topic_pose}")
 
         # the main timer for the detection process
-        self.detection_loop_timer_ = self.create_timer(0.1, self.detection_loop(self.tags_world_positions))
+        self.detection_loop_timer_ = self.create_timer(1, self.detection_loop(self.tags_world_positions))
 
     def detection_loop(self,tags_world_positions):
         bridge = CvBridge()
         # obtain img from the camera;
         self.cap = cv2.VideoCapture(self.get_parameter("camera_index").value)
+        # self.cap = cv2.VideoCapture(self.get_parameter("camera_index").value, cv2.CAP_V4L2)
+        if not self.cap.isOpened():
+            print("Error: Could not open camera 1")
         # self.cap = cv2.VideoCapture(self.get_parameter("camera_number").value-1)
 
         while True:
             #capture frame by frame
             ret, img = self.cap.read()
+            if not ret:
+                print("Fail to grab image")
+                continue
 
             # convert the image to grayscale otherwise the detection will not work
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -184,7 +190,7 @@ class TagDetectionNode(Node): # MODIFY NAME
 
                     # create the message using Pose() type and then make sure evertyhing is float number
                     detected_pose_msg = Pose()
-                    scale=2    # scale the pose to make it visible in rviz
+                    scale=1    # scale the pose to make it visible in rviz
                     detected_pose_msg.position.x = float(scale*detected_pose[0])
                     detected_pose_msg.position.y = float(scale*detected_pose[1])
                     detected_pose_msg.position.z = float(scale*detected_pose[2])
@@ -231,15 +237,15 @@ class TagDetectionNode(Node): # MODIFY NAME
             # img_msg = img
             self.image_publisher_.publish(img_msg)
 
+            # break the loop if 'q' is pressed
+            # key = cv2.waitKey(1000)
+            # if key == ord('q'):
+            #     break
+
             # # show the img with the detections on the screen
             # cv2.imshow('test', img)
             # # cv2.imshow('test', thresh)
 
-            # break the loop if 'q' is pressed
-            # key = cv2.waitKey(100)
-            # if key == ord('q'):
-            #     break
-            
             # cv2.destroyAllWindows()
             # self.cap.release()
     

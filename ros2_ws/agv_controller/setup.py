@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'aptag_detection'
+package_name = 'agv_controller'
 
 setup(
     name=package_name,
@@ -20,10 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'tag_detection_node = aptag_detection.tag_detection_node:main',
-            'tf_broadcaster_node = aptag_detection.tf_broadcaster_node:main',
-            'static_tf_broadcaster = aptag_detection.static_tf_broadcaster:main',
-            'pose_to_marker_node = aptag_detection.pose_to_marker_node:main',
+            'agv_controller = agv_controller.agv_controller:main',
         ],
     },
 )
