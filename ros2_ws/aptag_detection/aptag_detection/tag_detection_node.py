@@ -43,16 +43,14 @@ class TagDetectionNode(Node): # MODIFY NAME
         super().__init__("tag_detection") # MODIFY NAME
 
         # define tag world coordinates in meters
+        # self.tags_world_positions={ 0:np.array([[0],[2.5],[0]]),
+        #                             1:np.array([[-2.5],[2.5],[0]]),
+        #                             2:np.array([[-2.5],[2.5],[0]]),
+        #                             3:np.array([[0],[0],[0]])}
         self.tags_world_positions={ 0:np.array([[0],[0],[0]]),
-                                    1:np.array([[-2.5],[2.5],[0]]),
-                                    2:np.array([[2.5],[2.5],[0]]),
-                                    3:np.array([[0],[2.5],[0]])}
-
-        # define basic camera parameters
-        self.fx=600
-        self.fy=600
-        self.cx=320
-        self.cy=240
+                                    1:np.array([[0],[2.5],[0]]),
+                                    2:np.array([[-2.5],[2.5],[0]]),
+                                    3:np.array([[-2.5],[0],[0]])}
 
         # define parameters
         self.declare_parameter("camera_number",1)
@@ -60,15 +58,32 @@ class TagDetectionNode(Node): # MODIFY NAME
         self.camera_name="camera_"+str(self.get_parameter("camera_number").value)
         self.pub_topic_pose = "/"+self.camera_name+"/tag_detection"
         self.pub_topic_image = "/"+self.camera_name+"/image_raw"
+        # self.pub_topic_AMR = "/"+self.camera_name+"/AMR_pose"
 
-        # self.declare_parameter("camera_name", "camera1")
-        # self.pub_topic_pose = "/"+self.get_parameter("camera_name").value+"/tag_detection"
-        # self.pub_topic_image = "/"+self.get_parameter("camera_name").value+"/image_raw"
-
-        # publish the detected pose of the tags
+        # This need to be modified based on camera calibration (from matlab)
+        # here the camera index may also change with different computer usb port!
+        if self.get_parameter("camera_number").value==1:
+            # define basic camera parameters for webcam C960
+            self.fx=471.2
+            self.fy=471.9
+            self.cx=334.77
+            self.cy=255.1
+        else:
+            # define basic camera parameters for webcam Emeet
+            self.fx=889.31
+            self.fy=889.81
+            self.cx=640.52
+            self.cy=371.75
+        print(f"fx{self.fx}")
+        # Define publisher
+        # publisher for camera pose based on detected tag
         self.tag_detection_publisher_ = self.create_publisher(Pose, self.pub_topic_pose, 10)
+        # publisher for AMR pose based on camera pose
+        # self.tag_detection_publisher_ = self.create_publisher(Pose, self.pub_topic_AMR, 10)
+        # publisher for camera image with detection
         self.image_publisher_ = self.create_publisher(Image, self.pub_topic_image, 10)
-        print(f"Publishing detected tags on topic: {self.pub_topic_pose}")
+
+        # print(f"Publishing detected tags on topic: {self.pub_topic_pose}")
 
         # the main timer for the detection process
         self.detection_loop_timer_ = self.create_timer(1, self.detection_loop(self.tags_world_positions))
@@ -85,19 +100,26 @@ class TagDetectionNode(Node): # MODIFY NAME
         while True:
             #capture frame by frame
             ret, img = self.cap.read()
+            # print(f"{img.shape}")
             if not ret:
-                print("Fail to grab image")
+                # print("Fail to grab image")
                 continue
 
             # convert the image to grayscale otherwise the detection will not work
             gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
             # Apply Gaussian blur to eliminate noise
-            kernel_size = 7
+            kernel_size = 11
             blur = cv2.GaussianBlur(gray, (kernel_size, kernel_size), 0)
 
             # apply threshold to avoid effect from shadows
             thresh = cv2.threshold(blur, 150, 230, cv2.THRESH_BINARY)[1]
+            # thresh = cv2.adaptiveThreshold(blur,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,\
+            # cv2.THRESH_BINARY,19,2)
+            '''
+            The adaptive threshold method performs better in the presence of shadows and lighting changes.
+            Here the block size should not be very small otherwise tag will not be visible
+            '''
 
             # using the dukietown version python binding:
             at_detector = Detector(searchpath=['apriltags'],
@@ -145,15 +167,15 @@ class TagDetectionNode(Node): # MODIFY NAME
                     # print(f"Tag ID of first detection: {id}")
                     # print(f"Center of first detection: {center}")
                     # print(f"Rotation matrix method 1: {R_matrix}")
-                    # print(f"Translation method 1: {t}")
+                    print(f"Translation method 1: {t}")
 
                     # Find euler angles from rotation matrix
                     theta_x=math.atan2(R_matrix[2, 1],R_matrix[2, 2])
                     theta_y=math.atan2(-R_matrix[2, 0],math.sqrt(R_matrix[2, 1]**2+R_matrix[2, 2]**2))
                     theta_z=math.atan2(R_matrix[1, 0],R_matrix[0, 0])
-                    # print(f"theta_x:{theta_x*180/math.pi}")
-                    # print(f"theta_y:{theta_y*180/math.pi}")
-                    # print(f"theta_z:{theta_z*180/math.pi}")
+                    print(f"theta_x:{theta_x*180/math.pi}")
+                    print(f"theta_y:{theta_y*180/math.pi}")
+                    print(f"theta_z:{theta_z*180/math.pi}")
 
                     # ========= Step #2: Construct extrinsic matrix and intrinsic matrix ========= 
                     # 1. to convert from pixel coordinate to world coordinate both matrices are augmented("_aug")
@@ -174,18 +196,28 @@ class TagDetectionNode(Node): # MODIFY NAME
                     y_center = detections[0].center[1]
                     P_pixel_aug=np.array([[x_center], [y_center],[1],[1]])
                     P_world_aug=extrinsic_c2w_inv@intrinsic_p2c_inv@P_pixel_aug
-                    P_tag_to_camera=np.array([P_world_aug[0],
+                    # P_world_aug=extrinsic_camera_to_world_aug@intrinsic_p2c_inv@P_pixel_aug
+
+                    # If using with a customized angle: but here the distances are not validated 
+                    # P_tag_to_camera=np.array([-P_world_aug[0],
+                    #                         P_world_aug[1],
+                    #                         P_world_aug[2]])
+
+                    # If using 90 degree downward mounting:
+                    P_tag_to_camera=np.array([-P_world_aug[0],
                                             P_world_aug[1],
-                                            P_world_aug[2]])
+                                            t[2]])
                     # print(f"3D coordinate in world {P_world_aug}")
 
                     # convert relative pose to absolute pose in the world frame using predefined tag positions
-                    Pose_camera=tags_world_positions[id]-P_tag_to_camera
+                    Pose_camera=tags_world_positions[id]+P_tag_to_camera
                     # Pose_camera=P_tag_to_camera
-                    # print(f"camera_pose:{Pose_camera}")
+                    print(f"camera_pose:{Pose_camera}")
 
                     # ========= Step #4: Publish the detected pose =========
                     detected_pose=np.array([Pose_camera[0],Pose_camera[1],Pose_camera[2],theta_x,theta_y,theta_z],dtype=object)
+                    # quat=quaternion_from_euler(float(theta_x),float(theta_y),float(theta_z))
+                    # quat=quaternion_from_euler(float(-theta_x-math.pi/2),float(theta_y),float(-theta_z))    
                     quat=quaternion_from_euler(float(theta_x),float(theta_y),float(theta_z))
 
                     # create the message using Pose() type and then make sure evertyhing is float number
@@ -199,7 +231,7 @@ class TagDetectionNode(Node): # MODIFY NAME
                     detected_pose_msg.orientation.z = quat[2]
                     detected_pose_msg.orientation.w = quat[3]
                     self.tag_detection_publisher_.publish(detected_pose_msg)
-                    print(f"Detected pose of tag {id}: {detected_pose}")
+                    # print(f"Detected pose of tag {id}: {detected_pose}")
 
                     # ========= Step #5: Draw the detected tag on the image =========
                     # draw the center and the id of the tag
@@ -234,7 +266,9 @@ class TagDetectionNode(Node): # MODIFY NAME
 
             # publish the image with the detected tags
             img_msg = bridge.cv2_to_imgmsg(img, encoding="bgr8")
+            img_threshold_msg = bridge.cv2_to_imgmsg(thresh, encoding="mono8")
             # img_msg = img
+            # self.image_publisher_.publish(img_threshold_msg)
             self.image_publisher_.publish(img_msg)
 
             # break the loop if 'q' is pressed

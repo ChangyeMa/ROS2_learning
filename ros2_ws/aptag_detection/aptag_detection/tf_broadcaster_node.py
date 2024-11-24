@@ -9,7 +9,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Pose
 from tf2_ros import TransformBroadcaster
-
+from visualization_msgs.msg import Marker
 
 def quaternion_from_euler(ai, aj, ak):
     ai /= 2.0
@@ -41,11 +41,17 @@ class FramePublisher(Node):
 
         self.tf_broadcaster = TransformBroadcaster(self)
 
-
-        # subscriber to the camera tag detection
+        # subscriber to the camera 1 tag detection
         self.subscription = self.create_subscription(
             Pose,
             "/camera_1/tag_detection",
+            self.tag_transforms,
+            1)
+
+        # subscriber to the camera 2 tag detection
+        self.subscription = self.create_subscription(
+            Pose,
+            "/camera_2/tag_detection",
             self.tag_transforms,
             1)
 
@@ -56,14 +62,22 @@ class FramePublisher(Node):
             self.maker_transforms,
             1)
 
-        self.subscription  # prevent unused variable warning
+        # subscriber to the marker pose
+        # self.subscription = self.create_subscription(
+        #     Marker,
+        #     "/marker_topic",
+        #     self.maker_transforms,
+        #     1)
+
+        # self.subscription  # prevent unused variable warning
 
     def maker_transforms(self, pose):
+        # this is for the fixed locaiton of the apriltags
         t = TransformStamped()
 
         t.header.stamp = self.get_clock().now().to_msg()
         t.header.frame_id = 'world'
-        t.child_frame_id = "fixed tag"
+        t.child_frame_id = "marker"
 
         # pass the value for position and orientation
         t.transform.translation.x = pose.position.x
@@ -77,6 +91,7 @@ class FramePublisher(Node):
         self.tf_broadcaster.sendTransform(t)
 
     def tag_transforms(self, pose):
+        # this is for the camera pose based on tag detection
         t = TransformStamped()
 
         t.header.stamp = self.get_clock().now().to_msg()
